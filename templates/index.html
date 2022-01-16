@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="demoFont">
+<head>
+    <meta charset="UTF-8">
+    <title>Poem Generator | by TEAM-13</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<font face="Georgia Italic" size="6px" color="#273746  "> 
+
+<body>
+    <header>
+        <h1>Poem Generator</h1>
+        <marquee> <CENTER><h1 style="color:rgb(246, 246, 246);">TEAM-13</h1></CENTER> </marquee>
+    </header>
+    <main>
+        <aside class="left">
+            
+            <img src="static/images/markov.gif">
+            <img src="static/images/mt.gif"/>
+            
+        </aside>
+        <section class="right body-class">
+           <center> <img src="static/images/logo2.png" /> </center>
+            <div class="form-class">
+                <form action="/poemgenerator" method="post">
+                    <div class="inner-form">
+                        <div class="inp">
+                            <label for="inputs">
+                                Just type a word or phrase or group of certain words and see the magic happen!
+                            </label>
+                        </div>
+                        <input type="text" name="inputs" id="inputs" minlength="4">
+                    </div>
+                    <div class="inner-form">
+                        <div>
+                            <label for="no_of_chars">Enter No. of Characters for Poem</label>
+                        </div>
+                        <input class="enjoy-css" placeholder="" type="number" name="no_of_chars" id="no_of_chars" min="10">
+                    </div>
+                    <div class="inner-form">
+                        <input type="submit" value="Generate">
+                    </div>
+                </form>
+            </div>
+            <div class="para" >
+                <p>
+                    
+                    This website is a Markov chain-based poetry generator chain that simulates poetic line breaks by including a new line token in its model. It also includes the option of introducing an element of randomness, where by each step in walking through the chain has a chance of moving to any other state before continuing.
+
+
+                    
+
+                <br><br>
+                <H3>
+                    MARKOV CHAINS
+                </H3>
+                <br>
+                <p>
+                    A Markov chain is a stochastic model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event.
+                    <br><br>
+                    A Markov chain can be viewed as a finite state automata, with words representing states, and each edge containing a probability of transition information.
+                    <br><br>
+                </p>
+                <h3>
+                    IMPLEMENTATION
+                </h3>
+                <p>
+                    <br>
+                    For each word a list of possible followups is main- tained. This list is built in a learning part, while it- erating through poems. Important thing to note is that duplicates are not dropped. This captures the Markov process: more frequent word in a list has higher probability of being chosen as a followup.
+
+                    <br><br>
+                    First word of the new generated poem is chosen randomly. Next subsequent word is chosen from the according list (built during learning) randomly, adjusted for the fact that more frequent words have higher probability of being chosen. The process repeats until the desired length is reached. Length is defined by number of lines and number of words per line.                    <br><br>
+                    
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+</div>
+</html>
